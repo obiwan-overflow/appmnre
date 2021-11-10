@@ -1,0 +1,26 @@
+.card-signin {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+    width: 80% !important;
+    padding: 0 20px;
+    .logo {
+        text-align: center;
+        img {
+            width: 100%;
+        }
+    }
+    ion-label {
+        margin-bottom: 10px;
+    }
+    ion-input {
+        border: 1px solid #eee;
+        margin-bottom: 10px;
+    }
+    .btn-signin {
+        margin-top: 20px;
+        --background: #FF4316 !important;
+        --border-color: #FF4316 !important;
+    }
+}
