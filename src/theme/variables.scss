@@ -74,6 +74,14 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** theme **/
+  --ion-color-theme: #FF4316;
+  --ion-color-theme-rgb: 255,67,22;
+  --ion-color-theme-contrast: #ffffff;
+  --ion-color-theme-contrast-rgb: 255,255,255;
+  --ion-color-theme-shade: #e03b13;
+  --ion-color-theme-tint: #ff562d;
 }
 
 @media (prefers-color-scheme: dark) {
