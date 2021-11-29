@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="theme">
-    <ion-title>
-      หน้าหลัก
-    </ion-title>
+    <ion-title>หน้าหลัก</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
@@ -10,7 +8,22 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
+  <div class="container">
+    <div class="logo">
+      <img src="assets/images/logo.jpg" alt="">
+    </div>
+    <div class="content">
+        <p>ช่องทางการแจ้งเรื่องร้องเรียนต่อสำนักงานปลัดกระทรวงพลังงาน</p>
+        <ul>
+          <li>เว็บไซต์</li>
+          <li>จดหมายอิเล็กทรอนิกส์ (E-Mail) :</li>
+          <li>ส่งหนังสือร้องเรียนมาที่สำนักงานปลัดกระทรวงพลังงาน อาคาร บี ศูนย์เอนเนอร์ยี่ คอมเพล็กซ์ 555/2 ถนนวิภาวดีรังสิต แขวงจตุจักร เขตจตุจักร กรุงเทพฯ จตุจักร จตุจักร กรุงเทพมหานคร 10900</li>
+          <li>ข้อมูลการติดต่อ : โทรศัพท์ 0-2140-6000 โทรสาร 02-140-6228</li>
+        </ul>
+    </div>
+    <ion-button expand="block" color="theme" routerLink="/agreement">แจ้งเรื่องร้องเรียน</ion-button>
+    <ion-button expand="block" color="warning" routerLink="/ticket">ติดตามเรื่องร้องเรียน</ion-button>
+  </div>
   
 </ion-content>
 

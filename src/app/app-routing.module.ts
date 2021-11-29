@@ -15,6 +15,26 @@ const routes: Routes = [
     path: 'signin',
     loadChildren: () => import('./signin/signin.module').then( m => m.SigninPageModule)
   },
+  {
+    path: 'agreement',
+    loadChildren: () => import('./agreement/agreement.module').then( m => m.AgreementPageModule)
+  },
+  {
+    path: 'ticket',
+    loadChildren: () => import('./ticket/ticket.module').then( m => m.TicketPageModule)
+  },
+  {
+    path: 'ticket/status-detail',
+    loadChildren: () => import('./status-detail/status-detail.module').then( m => m.StatusDetailPageModule)
+  },
+  {
+    path: 'topic',
+    loadChildren: () => import('./topic/topic.module').then( m => m.TopicPageModule)
+  },
+  {
+    path: 'form',
+    loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
+  },
 ];
 
 @NgModule({

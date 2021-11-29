@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="theme">
+    <ion-title>ติดตามเรื่องร้องเรียน</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <form (ngSubmit)="form()">
+    <ion-input placeholder="กรอก Ticket ID สำหรับค้นหา" type="text" [(ngModel)]="data.ticket" name="ticket"></ion-input>
+    <ion-button expand="block" type="submit">ค้นหา</ion-button>
+    </form>
+  </div>
+</ion-content>
