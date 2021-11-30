@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'form',
     loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
   },
+  {
+    path: 'form-success',
+    loadChildren: () => import('./form-success/form-success.module').then( m => m.FormSuccessPageModule)
+  },
 ];
 
 @NgModule({

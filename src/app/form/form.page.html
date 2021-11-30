@@ -8,5 +8,175 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <form (ngSubmit)="form()">
+    <ion-row>
+      <ion-col size="12">
+        <ion-label>เลขประจำตัวประชาชน</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>คำนำหน้า</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ชื่อ</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>นามสกุล</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>อายุ</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>โทรศัพท์บ้าน</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>โทรศัพท์มือถือ</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>e-mail</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>บ้านเลขที่</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>หมู่ที่</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ชื่อหมู่บ้าน</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ซอย</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ถนน</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ภาค</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>จังหวัด</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>อำเภอ/เขต</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ตำบล/แขวง</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>รหัสไปรษณีย์</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ชื่อบุคคลหรือหน่วยงาน</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ชื่อบุคคลหรือหน่วยงาน</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>อ้างอิงเลขหนังสือ</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ประเด็นที่ท่านต้องการร้องเรียน/แจ้งข้อเสนอแนะ</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>เลขที่</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>หมู่ที่</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ชื่อหมู่บ้าน</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ซอย</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ถนน</ion-label>
+        <ion-input></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ภาค</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>จังหวัด</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>อำเภอ/เขต</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>ตำบล/แขวง</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>จุดสังเกตหรือสถานที่ใกล้เคียงที่สำคัญ (โปรดระบุ หากท่านทราบข้อมูล)</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>สิ่งที่ต้องการให้กระทรวงพลังงานดำเนินการ</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-col>
+      <ion-col size="12">
+        <ion-button color="theme" type="submit">ส่งเรื่อง</ion-button>
+      </ion-col>
+    </ion-row>
+    </form>
+  </ion-grid>
 </ion-content>
