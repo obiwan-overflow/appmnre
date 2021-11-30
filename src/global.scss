@@ -33,3 +33,11 @@
     --ion-color-shade: var(--ion-color-theme-shade);
     --ion-color-tint: var(--ion-color-theme-tint);
 }
+.ion-color-darktheme {
+    --ion-color-base: var(--ion-color-darktheme);
+    --ion-color-base-rgb: var(--ion-color-darktheme-rgb);
+    --ion-color-contrast: var(--ion-color-darktheme-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-darktheme-contrast-rgb);
+    --ion-color-shade: var(--ion-color-darktheme-shade);
+    --ion-color-tint: var(--ion-color-darktheme-tint);
+}
