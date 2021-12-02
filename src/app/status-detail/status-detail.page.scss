@@ -1,0 +1,32 @@
+.container {
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .card-status {
+        background: #eee;
+        padding: 10px 0;
+        border-left: 5px solid #006600;
+        margin-bottom: 10px;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+        .logo {
+            ion-icon {
+                font-size: 35px;
+                color: #006600;
+                margin-top: 8px;
+            }
+        }
+        .content {
+            p {
+                margin-top: 0 !important;
+                margin-bottom: 5px !important;
+            }
+        }
+    }
+    .card-detail {
+        background: #fff;
+        padding: 20px 10px;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    }
+}
