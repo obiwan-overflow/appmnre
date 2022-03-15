@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { RestApiService } from '../rest-api.service';
-import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActionSheetController,LoadingController,ToastController } from '@ionic/angular';
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
 
@@ -112,7 +112,9 @@ export class FormPage implements OnInit {
     form.append('response_person',this.todo.value.response_person);
     form.append('file',this.imagesarray);
     this.api.postdata('app/addResponse',form).subscribe((res)=>{
-      console.log(res);
+      if(res.status == "success"){
+        this.router.navigateByUrl('form-success/'+res.desc);
+      }
     },(err)=>{
       console.log(err);
     });

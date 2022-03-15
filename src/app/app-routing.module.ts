@@ -36,7 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
   },
   {
-    path: 'form-success',
+    path: 'form-success/:ticket',
     loadChildren: () => import('./form-success/form-success.module').then( m => m.FormSuccessPageModule)
   },
 ];
