@@ -146,6 +146,15 @@
         <ion-textarea type="text" formControlName="response_person"></ion-textarea>
       </ion-col>
       <ion-col size="12">
+        <div class="upload-images" (click)="presentActionSheet()">
+          <ion-icon name="camera-outline"></ion-icon>
+          <p>อัพโหลดรูปภาพ</p>
+        </div>
+      </ion-col>
+      <ion-col size="4" *ngFor="let imagesarray of imagesarray">
+        <img class="preview-images" [src]="imagesarray" alt="">
+      </ion-col>
+      <ion-col size="12">
         <ion-button color="theme" type="submit" [disabled]="!todo.valid">ส่งเรื่อง</ion-button>
       </ion-col>
     </ion-row>

@@ -31,7 +31,7 @@ export class TicketPage implements OnInit {
     //   console.log(err);
     // });
    
-    this.route.navigateByUrl('ticket/status-detail/'+ticket);
+    // this.route.navigateByUrl('ticket/status-detail/'+ticket);
   }
 
 }
