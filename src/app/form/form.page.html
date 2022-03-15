@@ -9,172 +9,144 @@
 
 <ion-content>
   <ion-grid>
-    <form (ngSubmit)="form()">
+    <form [formGroup]="todo" (ngSubmit)="form()">
     <ion-row>
       <ion-col size="12">
         <ion-label>เลขประจำตัวประชาชน</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="id_card"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>คำนำหน้า</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-input type="text" formControlName="name_title"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>ชื่อ</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="name"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>นามสกุล</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="lastname"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>อายุ</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="age"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>โทรศัพท์บ้าน</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="tel"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>โทรศัพท์มือถือ</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="phone"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>e-mail</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="email"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>บ้านเลขที่</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="address_no"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>หมู่ที่</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="moo"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>ชื่อหมู่บ้าน</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="housename"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>ซอย</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="soi"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>ถนน</ion-label>
-        <ion-input></ion-input>
-      </ion-col>
-      <ion-col size="12">
-        <ion-label>ภาค</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-input type="text" formControlName="road"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>จังหวัด</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-input type="text" formControlName="provinces"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>อำเภอ/เขต</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-input type="text" formControlName="amphures"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>ตำบล/แขวง</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-input type="text" formControlName="districts"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>รหัสไปรษณีย์</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="zipcode"></ion-input>
       </ion-col>
       <ion-col size="12">
-        <ion-label>ชื่อบุคคลหรือหน่วยงาน</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
+        <ion-label>รายละเอียดเรื่องร้องเรียน</ion-label>
+        <ion-select formControlName="name_topic">
+          <ion-select-option value="1">บุคคล</ion-select-option>
+          <ion-select-option value="2">กลุ่ม/คณะบุคคล</ion-select-option>
+          <ion-select-option value="3">หน่วยงาน</ion-select-option>
+          <ion-select-option value="4">บริษัท/ห้างร้าน</ion-select-option>
+          <ion-select-option value="5">อื่น ๆ</ion-select-option>
         </ion-select>
       </ion-col>
       <ion-col size="12">
         <ion-label>ชื่อบุคคลหรือหน่วยงาน</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="note_topic"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>อ้างอิงเลขหนังสือ</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="number_topic"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>ประเด็นที่ท่านต้องการร้องเรียน/แจ้งข้อเสนอแนะ</ion-label>
-        <ion-textarea></ion-textarea>
+        <ion-textarea type="text" formControlName="complain_name"></ion-textarea>
       </ion-col>
       <ion-col size="12">
         <ion-label>เลขที่</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="t_address_no"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>หมู่ที่</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="t_moo"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>ชื่อหมู่บ้าน</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="t_housename"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>ซอย</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" formControlName="t_soi"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>ถนน</ion-label>
-        <ion-input></ion-input>
-      </ion-col>
-      <ion-col size="12">
-        <ion-label>ภาค</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-input type="text" formControlName="t_road"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>จังหวัด</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-input type="text" formControlName="t_provinces"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>อำเภอ/เขต</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-input type="text" formControlName="t_amphures"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>ตำบล/แขวง</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-input type="text" formControlName="t_districts"></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>รหัสไปรษณีย์</ion-label>
+        <ion-input type="text" formControlName="t_zipcode"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>จุดสังเกตหรือสถานที่ใกล้เคียงที่สำคัญ (โปรดระบุ หากท่านทราบข้อมูล)</ion-label>
-        <ion-textarea></ion-textarea>
+        <ion-textarea type="text" formControlName="place_landmarks"></ion-textarea>
       </ion-col>
       <ion-col size="12">
         <ion-label>สิ่งที่ต้องการให้กระทรวงพลังงานดำเนินการ</ion-label>
-        <ion-textarea></ion-textarea>
+        <ion-textarea type="text" formControlName="response_person"></ion-textarea>
       </ion-col>
       <ion-col size="12">
-        <ion-button color="theme" type="submit">ส่งเรื่อง</ion-button>
+        <ion-button color="theme" type="submit" [disabled]="!todo.valid">ส่งเรื่อง</ion-button>
       </ion-col>
     </ion-row>
     </form>

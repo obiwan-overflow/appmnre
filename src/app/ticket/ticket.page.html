@@ -9,9 +9,9 @@
 
 <ion-content>
   <div class="container">
-    <form (ngSubmit)="form()">
-    <ion-input placeholder="กรอก Ticket ID สำหรับค้นหา" type="text" [(ngModel)]="data.ticket" name="ticket"></ion-input>
-    <ion-button expand="block" type="submit" color="theme">ค้นหา</ion-button>
+    <form [formGroup]="todo" (ngSubmit)="form()">
+    <ion-input placeholder="กรอก Ticket ID สำหรับค้นหา" type="text" formControlName="ticket"></ion-input>
+    <ion-button expand="block" type="submit" color="theme" [disabled]="!todo.valid">ค้นหา</ion-button>
     </form>
   </div>
 </ion-content>

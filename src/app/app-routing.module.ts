@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./ticket/ticket.module').then( m => m.TicketPageModule)
   },
   {
-    path: 'ticket/status-detail',
+    path: 'ticket/status-detail/:ticket',
     loadChildren: () => import('./status-detail/status-detail.module').then( m => m.StatusDetailPageModule)
   },
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./topic/topic.module').then( m => m.TopicPageModule)
   },
   {
-    path: 'form',
+    path: 'form/:topicId/:id',
     loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
   },
   {

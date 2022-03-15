@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { RestApiService } from '../rest-api.service';
 
 @Component({
   selector: 'app-ticket',
@@ -7,15 +9,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./ticket.page.scss'],
 })
 export class TicketPage implements OnInit {
-  data = {}
-  constructor(public route:Router) { }
+  todo:FormGroup;
+  constructor(public route:Router,private formBuilder: FormBuilder,public api:RestApiService) {
+    this.todo = this.formBuilder.group({
+      ticket: ['', Validators.required],
+    });
+  }
 
   ngOnInit() {
   }
 
   async form(){
-    console.log(this.data);
-    this.route.navigateByUrl('ticket/status-detail');
+    let ticket = this.todo.value.ticket;
+
+    // const form = new FormData();
+    // form.append('case_code ',ticket);
+
+    // this.api.postdata('app/findTicket',form).subscribe((res)=>{
+    //   console.log(res);
+    // },(err)=>{
+    //   console.log(err);
+    // });
+   
+    this.route.navigateByUrl('ticket/status-detail/'+ticket);
   }
 
 }
