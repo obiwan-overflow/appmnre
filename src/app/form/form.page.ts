@@ -4,6 +4,7 @@ import { RestApiService } from '../rest-api.service';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActionSheetController,LoadingController,ToastController } from '@ionic/angular';
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-form',
@@ -21,7 +22,7 @@ export class FormPage implements OnInit {
   listsTombons:any;
   listsAmphuresTwo:any;
   listsTombonsTwo:any;
-
+  token:any;
   // loadding
   loadingImg:any;
 
@@ -37,6 +38,7 @@ export class FormPage implements OnInit {
     public actionSheetController: ActionSheetController,
     private camera: Camera,
     public loadingController:LoadingController,
+    public storage:Storage
   ) {
     this.todo = this.formBuilder.group({
       id_card: ['', Validators.required],
@@ -77,6 +79,11 @@ export class FormPage implements OnInit {
   ngOnInit() {
   }
   async ionViewWillEnter(){
+    await this.storage.get('userData').then((data)=>{
+      if(data !== null){
+        this.token  = data.token;
+      }
+    });
     this.topicId    = await this.route.snapshot.paramMap.get('topicId');
     this.subTopic   = await this.route.snapshot.paramMap.get('id');
     await this.api.getdata('app/provinces').subscribe((res)=>{
@@ -108,6 +115,7 @@ export class FormPage implements OnInit {
   }
   async form(){
     const form = new FormData();
+    form.append('AUT_USER_ID',this.token);
     form.append('topic_id',this.topicId);
     // form.append('sub_topic_id',this.topicId);
     form.append('id_card',this.todo.value.id_card);

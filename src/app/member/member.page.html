@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="theme">
+    <ion-title>หน้าสมาชิก</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <div class="btn-form" routerLink="/agreement"><ion-icon name="reader-sharp"></ion-icon> แจ้งเรื่องร้องเรียน</div>
+        <div class="btn-ticket" routerLink="/ticket"><ion-icon name="ticket-sharp"></ion-icon> ติดตามเรื่องร้องเรียน</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card *ngIf="check == 0">
+    <ion-card-content>
+      <p>ไม่พบเรื่องร้องเรียนของท่าน</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let data of dataLists">
+    <ion-card-content>
+      <p>รหัสเรื่อง : {{data.case_code}}</p>
+      <p>ชื่อเรื่อง : {{data.response_person}}</p>
+      <p>สถานะ : {{data.text_status}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'form-success/:ticket',
     loadChildren: () => import('./form-success/form-success.module').then( m => m.FormSuccessPageModule)
   },
+  {
+    path: 'member',
+    loadChildren: () => import('./member/member.module').then( m => m.MemberPageModule)
+  },
 ];
 
 @NgModule({
