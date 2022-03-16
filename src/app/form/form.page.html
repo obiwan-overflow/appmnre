@@ -17,7 +17,9 @@
       </ion-col>
       <ion-col size="12">
         <ion-label>คำนำหน้า</ion-label>
-        <ion-input type="text" formControlName="name_title"></ion-input>
+        <ion-select formControlName="name_title">
+          <ion-select-option *ngFor="let data of nameTitle" value="{{data.id}}">{{data.title}}</ion-select-option>
+        </ion-select>
       </ion-col>
       <ion-col size="12">
         <ion-label>ชื่อ</ion-label>
@@ -65,15 +67,21 @@
       </ion-col>
       <ion-col size="12">
         <ion-label>จังหวัด</ion-label>
-        <ion-input type="text" formControlName="provinces"></ion-input>
+        <ion-select formControlName="provinces" (ionChange)="getAmphures($event)">
+          <ion-select-option *ngFor="let data of listsProvinces" value="{{data.PROVINCE_ID}}">{{data.PROVINCE_NAME}}</ion-select-option>
+        </ion-select>
       </ion-col>
       <ion-col size="12">
         <ion-label>อำเภอ/เขต</ion-label>
-        <ion-input type="text" formControlName="amphures"></ion-input>
+        <ion-select formControlName="amphures" (ionChange)="getTambons($event)">
+          <ion-select-option *ngFor="let data of listsAmphures" value="{{data.AMPHUR_ID}}">{{data.AMPHUR_NAME}}</ion-select-option>
+        </ion-select>
       </ion-col>
       <ion-col size="12">
         <ion-label>ตำบล/แขวง</ion-label>
-        <ion-input type="text" formControlName="districts"></ion-input>
+        <ion-select formControlName="districts">
+          <ion-select-option *ngFor="let data of listsTombons" value="{{data.TAMBON_ID}}">{{data.TAMBON_NAME}}</ion-select-option>
+        </ion-select>
       </ion-col>
       <ion-col size="12">
         <ion-label>รหัสไปรษณีย์</ion-label>
@@ -123,15 +131,21 @@
       </ion-col>
       <ion-col size="12">
         <ion-label>จังหวัด</ion-label>
-        <ion-input type="text" formControlName="t_provinces"></ion-input>
+        <ion-select formControlName="t_provinces" (ionChange)="getAmphuresTwo($event)">
+          <ion-select-option *ngFor="let data of listsProvinces" value="{{data.PROVINCE_ID}}">{{data.PROVINCE_NAME}}</ion-select-option>
+        </ion-select>
       </ion-col>
       <ion-col size="12">
         <ion-label>อำเภอ/เขต</ion-label>
-        <ion-input type="text" formControlName="t_amphures"></ion-input>
+        <ion-select formControlName="t_amphures" (ionChange)="getTambonsTwo($event)">
+          <ion-select-option *ngFor="let data of listsAmphuresTwo" value="{{data.AMPHUR_ID}}">{{data.AMPHUR_NAME}}</ion-select-option>
+        </ion-select>
       </ion-col>
       <ion-col size="12">
         <ion-label>ตำบล/แขวง</ion-label>
-        <ion-input type="text" formControlName="t_districts"></ion-input>
+        <ion-select formControlName="t_districts">
+          <ion-select-option *ngFor="let data of listsTombonsTwo" value="{{data.TAMBON_ID}}">{{data.TAMBON_NAME}}</ion-select-option>
+        </ion-select>
       </ion-col>
       <ion-col size="12">
         <ion-label>รหัสไปรษณีย์</ion-label>

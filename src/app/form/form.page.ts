@@ -15,6 +15,13 @@ export class FormPage implements OnInit {
   todo:FormGroup;
   topicId:any;
   subTopic:any;
+  nameTitle:any;
+  listsProvinces:any;
+  listsAmphures:any;
+  listsTombons:any;
+  listsAmphuresTwo:any;
+  listsTombonsTwo:any;
+
   // loadding
   loadingImg:any;
 
@@ -70,11 +77,36 @@ export class FormPage implements OnInit {
   ngOnInit() {
   }
   async ionViewWillEnter(){
-    this.topicId  = await this.route.snapshot.paramMap.get('topicId');
-    this.subTopic = await this.route.snapshot.paramMap.get('id');
+    this.topicId    = await this.route.snapshot.paramMap.get('topicId');
+    this.subTopic   = await this.route.snapshot.paramMap.get('id');
+    await this.api.getdata('app/provinces').subscribe((res)=>{
+      this.listsProvinces = res;
+    });
+    await this.api.getdata('app/getPrefix').subscribe((res)=>{
+      this.nameTitle = res;
+    });
+  }
+  async getAmphures(event){
+    await this.api.getdata('app/amphures&idprovinces='+event.target.value).subscribe((res)=>{
+      this.listsAmphures = res;
+    });
+  }
+  async getTambons(event){
+    await this.api.getdata('app/tambons&idamphures='+event.target.value).subscribe((res)=>{
+      this.listsTombons = res;
+    });
+  }
+  async getAmphuresTwo(event){
+    await this.api.getdata('app/amphures&idprovinces='+event.target.value).subscribe((res)=>{
+      this.listsAmphuresTwo = res;
+    });
+  }
+  async getTambonsTwo(event){
+    await this.api.getdata('app/tambons&idamphures='+event.target.value).subscribe((res)=>{
+      this.listsTombonsTwo = res;
+    });
   }
   async form(){
-    // this.route.navigateByUrl('form-success');
     const form = new FormData();
     form.append('topic_id',this.topicId);
     // form.append('sub_topic_id',this.topicId);
