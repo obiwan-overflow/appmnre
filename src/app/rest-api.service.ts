@@ -10,7 +10,7 @@ const httpOptions = {
 		'Content-Type': 'application/json'
 	})
 };
-const apiUrl = "https://charoenlap.com/epetition/public_html/api/index.php?route=";
+const apiUrl = "https://e-petition.energy.go.th/api/index.php?route=";
 
 @Injectable({
   providedIn: 'root'
