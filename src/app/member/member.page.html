@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="theme">
-    <ion-title>หน้าสมาชิก</ion-title>
+    <ion-title>ประวัติการส่งเรื่องร้องเรียน</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
@@ -13,6 +13,11 @@
       <ion-col size="12">
         <div class="btn-form" routerLink="/agreement"><ion-icon name="reader-sharp"></ion-icon> แจ้งเรื่องร้องเรียน</div>
         <div class="btn-ticket" routerLink="/ticket"><ion-icon name="ticket-sharp"></ion-icon> ติดตามเรื่องร้องเรียน</div>
+      </ion-col>
+      <ion-col size="12">
+        <ion-text>
+          <h4>ประวัติการส่งเรื่องร้องเรียน</h4>
+        </ion-text>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -28,5 +33,12 @@
       <p>สถานะ : {{data.text_status}}</p>
     </ion-card-content>
   </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button color="primary" expand="block" routerLink="/home">กลับไปหน้าหลัก</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 

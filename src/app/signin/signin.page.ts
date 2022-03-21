@@ -44,8 +44,9 @@ export class SigninPage implements OnInit {
     await this.api.postdata('app/login',form).subscribe((res)=>{
       if(res.status == 'success'){
         loading.dismiss();
+        // console.log(res);
         this.storage.set('userData',res.desc);
-        location.assign('member');
+        location.assign('member#'+res.desc.token);
       }else if(res.status == 'failed'){
         loading.dismiss();
         this.alert = 'failed';

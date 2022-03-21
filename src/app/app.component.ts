@@ -16,6 +16,13 @@ export class AppComponent {
     // await this.storage.defineDriver(MyCustomDriver)
     await this.storage.create();
     this.token = await this.storage.get('userData');
+
+    var re = /#/gi; 
+    var str = location.hash;
+    var newstr = str.replace(re, ""); 
+    if(newstr!=''){
+      this.token = newstr;
+    }
   }
   async signOut(){
     const loading = await this.loadingController.create({

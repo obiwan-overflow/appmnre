@@ -27,19 +27,30 @@ export class MemberPage implements OnInit {
       cssClass: 'my-custom-class',
       message: 'Please wait...',
     });
-    await loading.present();
-    await this.storage.get('userData').then((data)=>{
-      this.token = data.token;
-    });
-    const form = new FormData();
-    form.append('token',this.token);
-    await this.api.postdata('app/getTicketByID',form).subscribe((res)=>{
-      this.dataLists = res.desc;
-      this.check = res.desc.length;
-      loading.dismiss();
-    },(err)=>{
-      console.log(err);
-      loading.dismiss();
-    })
+    
+
+    var re = /#/gi; 
+    var str = location.hash;
+    var newstr = str.replace(re, ""); 
+    if(newstr){
+      this.token = newstr;
+    }else{
+      await loading.present(); 
+      this.storage.get('userData').then((data)=>{
+        this.token = data.token;
+      });
+    }
+    if(this.token){
+      const form = new FormData();
+      form.append('token',this.token);
+      await this.api.postdata('app/getTicketByID',form).subscribe((res)=>{
+        this.dataLists = res.desc;
+        this.check = res.desc.length;
+        loading.dismiss();
+      },(err)=>{
+        console.log(err);
+        loading.dismiss();
+      })
+    }
   }
 }
