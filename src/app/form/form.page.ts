@@ -45,9 +45,9 @@ export class FormPage implements OnInit {
       name_title: ['', Validators.required],
       name: ['', Validators.required],
       lastname: ['', Validators.required],
-      age: ['', Validators.required],
-      tel: ['', Validators.required],
-      phone: ['', Validators.required],
+      age: ['', Validators.required,Validators.min(1),Validators.max(88)],
+      tel: ['', Validators.required,Validators.maxLength(10)],
+      phone: ['', Validators.required,Validators.maxLength(10)],
       email: ['', Validators.required],
       address_no: ['', Validators.required],
       moo: ['', Validators.required],
@@ -57,7 +57,7 @@ export class FormPage implements OnInit {
       provinces: ['', Validators.required],
       amphures: ['', Validators.required],
       districts: ['', Validators.required],
-      zipcode: ['', Validators.required],
+      zipcode: ['', Validators.required,Validators.maxLength(5)],
       name_topic: ['', Validators.required],
       note_topic: ['', Validators.required],
       number_topic: ['', Validators.required],
@@ -70,7 +70,7 @@ export class FormPage implements OnInit {
       t_provinces: ['', Validators.required],
       t_amphures: ['', Validators.required],
       t_districts: ['', Validators.required],
-      t_zipcode: ['', Validators.required],
+      t_zipcode: ['', Validators.required,Validators.maxLength(5)],
       place_landmarks: ['', Validators.required],
       response_person: ['', Validators.required],
     });
@@ -203,25 +203,29 @@ export class FormPage implements OnInit {
     allowEdit: false
   }
   async openCamera(){
-    this.loadingImage();
+    // this.loadingImage();
     this.camera.getPicture(this.cameraOptions).then((imgData) => {
       console.log('image data =>  ', imgData);
       this.base64Img = 'data:image/jpeg;base64,' + imgData;
       this.userImg = this.base64Img;
       this.updateImages(this.userImg);
+      this.loadingImg.dismiss();
     }, (err) => {
       console.log(err);
+      this.loadingImg.dismiss();
     })
   }
   async openGallery() {
-    this.loadingImage();
+    // this.loadingImage();
     this.camera.getPicture(this.gelleryOptions).then((imgData) => {
      console.log('image data =>  ', imgData);
      this.base64Img = 'data:image/jpeg;base64,' + imgData;
      this.userImg = this.base64Img;
      this.updateImages(this.userImg);
+     this.loadingImg.dismiss();
     }, (err) => {
      console.log(err);
+     this.loadingImg.dismiss();
     })
   }
   async updateImages(images){

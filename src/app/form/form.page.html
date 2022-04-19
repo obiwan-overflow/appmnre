@@ -12,34 +12,34 @@
     <form [formGroup]="todo" (ngSubmit)="form()">
     <ion-row>
       <ion-col size="12">
-        <ion-label>เลขประจำตัวประชาชน</ion-label>
+        <ion-label>เลขประจำตัวประชาชน <ion-text color="danger">*</ion-text></ion-label>
         <ion-input type="text" formControlName="id_card"></ion-input>
       </ion-col>
       <ion-col size="12">
-        <ion-label>คำนำหน้า</ion-label>
+        <ion-label>คำนำหน้า <ion-text color="danger">*</ion-text></ion-label>
         <ion-select formControlName="name_title">
           <ion-select-option *ngFor="let data of nameTitle" value="{{data.id}}">{{data.title}}</ion-select-option>
         </ion-select>
       </ion-col>
       <ion-col size="12">
-        <ion-label>ชื่อ</ion-label>
+        <ion-label>ชื่อ <ion-text color="danger">*</ion-text></ion-label>
         <ion-input type="text" formControlName="name"></ion-input>
       </ion-col>
       <ion-col size="12">
-        <ion-label>นามสกุล</ion-label>
+        <ion-label>นามสกุล <ion-text color="danger">*</ion-text></ion-label>
         <ion-input type="text" formControlName="lastname"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>อายุ</ion-label>
-        <ion-input type="text" formControlName="age"></ion-input>
+        <ion-input type="text" inputmode="numeric" maxlength="2" formControlName="age"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>โทรศัพท์บ้าน</ion-label>
-        <ion-input type="text" formControlName="tel"></ion-input>
+        <ion-input type="text" inputmode="numeric" maxlength="10" formControlName="tel"></ion-input>
       </ion-col>
       <ion-col size="12">
-        <ion-label>โทรศัพท์มือถือ</ion-label>
-        <ion-input type="text" formControlName="phone"></ion-input>
+        <ion-label>โทรศัพท์มือถือ <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input type="text" inputmode="numeric" maxlength="10" formControlName="phone"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>e-mail</ion-label>
@@ -66,26 +66,26 @@
         <ion-input type="text" formControlName="road"></ion-input>
       </ion-col>
       <ion-col size="12">
-        <ion-label>จังหวัด</ion-label>
+        <ion-label>จังหวัด <ion-text color="danger">*</ion-text></ion-label>
         <ion-select formControlName="provinces" (ionChange)="getAmphures($event)">
           <ion-select-option *ngFor="let data of listsProvinces" value="{{data.PROVINCE_ID}}">{{data.PROVINCE_NAME}}</ion-select-option>
         </ion-select>
       </ion-col>
       <ion-col size="12">
-        <ion-label>อำเภอ/เขต</ion-label>
+        <ion-label>อำเภอ/เขต <ion-text color="danger">*</ion-text></ion-label>
         <ion-select formControlName="amphures" (ionChange)="getTambons($event)">
           <ion-select-option *ngFor="let data of listsAmphures" value="{{data.AMPHUR_ID}}">{{data.AMPHUR_NAME}}</ion-select-option>
         </ion-select>
       </ion-col>
       <ion-col size="12">
-        <ion-label>ตำบล/แขวง</ion-label>
+        <ion-label>ตำบล/แขวง <ion-text color="danger">*</ion-text></ion-label>
         <ion-select formControlName="districts">
           <ion-select-option *ngFor="let data of listsTombons" value="{{data.TAMBON_ID}}">{{data.TAMBON_NAME}}</ion-select-option>
         </ion-select>
       </ion-col>
       <ion-col size="12">
         <ion-label>รหัสไปรษณีย์</ion-label>
-        <ion-input type="text" formControlName="zipcode"></ion-input>
+        <ion-input type="text" inputmode="numeric" maxlength="5" formControlName="zipcode"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>รายละเอียดเรื่องร้องเรียน</ion-label>
@@ -130,26 +130,26 @@
         <ion-input type="text" formControlName="t_road"></ion-input>
       </ion-col>
       <ion-col size="12">
-        <ion-label>จังหวัด</ion-label>
+        <ion-label>จังหวัด <ion-text color="danger">*</ion-text></ion-label>
         <ion-select formControlName="t_provinces" (ionChange)="getAmphuresTwo($event)">
           <ion-select-option *ngFor="let data of listsProvinces" value="{{data.PROVINCE_ID}}">{{data.PROVINCE_NAME}}</ion-select-option>
         </ion-select>
       </ion-col>
       <ion-col size="12">
-        <ion-label>อำเภอ/เขต</ion-label>
+        <ion-label>อำเภอ/เขต <ion-text color="danger">*</ion-text></ion-label>
         <ion-select formControlName="t_amphures" (ionChange)="getTambonsTwo($event)">
           <ion-select-option *ngFor="let data of listsAmphuresTwo" value="{{data.AMPHUR_ID}}">{{data.AMPHUR_NAME}}</ion-select-option>
         </ion-select>
       </ion-col>
       <ion-col size="12">
-        <ion-label>ตำบล/แขวง</ion-label>
+        <ion-label>ตำบล/แขวง <ion-text color="danger">*</ion-text></ion-label>
         <ion-select formControlName="t_districts">
           <ion-select-option *ngFor="let data of listsTombonsTwo" value="{{data.TAMBON_ID}}">{{data.TAMBON_NAME}}</ion-select-option>
         </ion-select>
       </ion-col>
       <ion-col size="12">
         <ion-label>รหัสไปรษณีย์</ion-label>
-        <ion-input type="text" formControlName="t_zipcode"></ion-input>
+        <ion-input type="text" inputmode="numeric" maxlength="5" formControlName="t_zipcode"></ion-input>
       </ion-col>
       <ion-col size="12">
         <ion-label>จุดสังเกตหรือสถานที่ใกล้เคียงที่สำคัญ (โปรดระบุ หากท่านทราบข้อมูล)</ion-label>
@@ -169,7 +169,10 @@
         <img class="preview-images" [src]="imagesarray" alt="">
       </ion-col>
       <ion-col size="12">
-        <ion-button color="theme" type="submit" [disabled]="!todo.valid">ส่งเรื่อง</ion-button>
+        <ion-text color="danger">
+          <span>กรุณากรอกข้อมูลให้ครบถ้วนจึงจะสามารถส่งเรื่องได้</span>
+        </ion-text>
+        <ion-button color="theme" expand="block" type="submit" [disabled]="!todo.valid">ส่งเรื่อง</ion-button>
       </ion-col>
     </ion-row>
     </form>
