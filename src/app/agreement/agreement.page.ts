@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agreement.page.scss'],
 })
 export class AgreementPage implements OnInit {
-
-  constructor() { }
+  statusBtn:any;
+  constructor() {
+    this.statusBtn = "hide";
+  }
 
   ngOnInit() {
   }
-
+  async confirm(e){
+    if(e.detail.checked == true){
+      this.statusBtn = "show";
+    }else{
+      this.statusBtn = "hide";
+    }
+  }
 }
